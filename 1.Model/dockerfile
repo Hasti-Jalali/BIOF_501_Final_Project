@@ -1,0 +1,17 @@
+# Use the official Python 3.8.6 base image
+FROM python:3.8.6-slim
+
+# Set the working directory inside the container
+WORKDIR /app
+
+# Copy the script and dependency files into the container
+COPY data_gathering.sh /app/
+COPY data_preprocessing.py /app/
+COPY train_validation.py /app/
+COPY test_results.py /app/
+
+
+COPY requirements.txt /app/
+
+# Install dependencies
+RUN pip install --no-cache-dir -r requirements.txt
