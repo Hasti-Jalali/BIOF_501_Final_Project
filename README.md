@@ -40,21 +40,14 @@ This project implements two distinct workflows:
   nextflow -v
   ```
 
-2. **Verify Docker Installation**:
+2. **Install Docker**:
+
+   - Docker is required for this project. If you don’t have Docker installed, follow the instructions [here](https://docs.docker.com/get-docker/).
 
 - To ensure Docker is installed correctly, run:
   ```bash
   docker --version
   ```
-
-- Ensure you have Nextflow installed. If not, you can install it using the following command:
-  ```bash
-  curl -s https://get.nextflow.io | bash
-  ```
-
-2. **Install Docker**:
-
-   - Docker is required for this project. If you don’t have Docker installed, follow the instructions [here](https://docs.docker.com/get-docker/).
 
 3. **Dependencies**:
 
@@ -70,4 +63,3 @@ This project implements two distinct workflows:
      - **einops==0.8.0**
      - **transformers==4.46.3**
      - **matplotlib==3.1.3**
-
