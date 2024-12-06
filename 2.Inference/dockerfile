@@ -1,0 +1,21 @@
+# Use the official Python 3.8.6 base image
+FROM python:3.8.6
+
+# Install bash for executing shell scripts
+RUN apt-get update && apt-get install -y bash && rm -rf /var/lib/apt/lists/*
+
+# Set the working directory inside the container
+WORKDIR /app
+
+# Copy the script and dependency files into the container
+COPY preprocessing.py /app/preprocessing.py
+COPY inference.py /app/inference.py
+COPY output.py /app/output.py
+
+COPY requirements.txt /app/
+
+# Install dependencies
+RUN pip install -r requirements.txt
+
+# Expose the application port
+EXPOSE 5000
