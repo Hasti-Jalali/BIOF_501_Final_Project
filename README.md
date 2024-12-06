@@ -71,33 +71,34 @@ This project implements two distinct workflows:
 
 ### Running the First Workflow: Training
 
-1. **Verify Nextflow Installation**:
+1. **Navigate to the `1.Model` directory**:
 
-   - Navigate to the `1.Model` directory:
      ```bash
      cd 1.Model
      ```
+
+2. **Verify Nextflow Installation**:
    - Verify that Nextflow is installed by running:
      ```bash
      nextflow -v
      ```
    - If Nextflow is not installed, follow the steps in the prerequisites section to install it.
 
-2. **Build the Docker Image**:
+3. **Build the Docker Image**:
 
    - Create the Docker image for the training workflow using the following command:
      ```bash
      docker build -t mednist_training:latest .
      ```
 
-3. **Run Nextflow**:
+4. **Run Nextflow**:
 
    - Execute the training workflow using Nextflow:
      ```bash
      nextflow run main.nf --with-docker
      ```
 
-4. **Output of the Training Workflow**:
+5. **Output of the Training Workflow**:
 
    - The output of this workflow is saved in the following directories:
 
@@ -111,6 +112,7 @@ This project implements two distinct workflows:
           - This plot shows the average loss per epoch, illustrating how the model’s training loss decreases over time, indicating improved learning.
        2. **Validation Area Under the ROC Curve**:
           - This plot shows the ROC AUC for the validation dataset per epoch, demonstrating how well the model distinguishes between classes during validation.
+
     ![Training plot](./image/training_plots.png)
 
    - **Test Metrics Plot**:
@@ -138,26 +140,28 @@ This project implements two distinct workflows:
 
 ### Running the Second Workflow: Inference
 
-1. **Verify Nextflow Installation**:
+1.  **Navigate to the `2.Inference` directory**:
 
-   - Navigate to the `2.Inference` directory:
      ```bash
      cd 2.Inference
      ```
+
+2. **Verify Nextflow Installation**:
+
    - Verify that Nextflow is installed by running:
      ```bash
      nextflow -v
      ```
    - If Nextflow is not installed, follow the steps in the prerequisites section to install it.
 
-2. **Build the Docker Image**:
+3. **Build the Docker Image**:
 
    - Create the Docker image for the inference workflow using the following command:
      ```bash
      docker build -t mednist_inference:latest .
      ```
 
-3. **Run Nextflow**:
+4. **Run Nextflow**:
 
    - Execute the inference workflow using Nextflow:
      ```bash
@@ -165,7 +169,7 @@ This project implements two distinct workflows:
      ```
 
 
-4. **Output of the Inference Workflow**:
+5. **Output of the Inference Workflow**:
 
    - The output of this workflow is a file named `test_predictions.csv`, which contains the classifications for the images in the `./test_mednist` folder.
 
