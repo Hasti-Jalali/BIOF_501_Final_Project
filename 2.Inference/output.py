@@ -20,7 +20,10 @@ def save_results_to_csv(temp_output_file, output_csv):
 
     print(f"Inference results saved to CSV file '{output_csv}'.")
 
+    if os.path.exists(temp_output_file):
+        os.remove(temp_output_file)
+
 if __name__ == "__main__":
-    temp_output_file = "results.pt"  # Temporary file
-    output_csv = "test_predictions.csv"
+    temp_output_file = "/app/results.pt"  # Temporary file
+    output_csv = "/app/test_predictions.csv"
     save_results_to_csv(temp_output_file, output_csv)

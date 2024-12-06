@@ -41,4 +41,4 @@ def preprocess_test_images(input_dir, output_file):
 
 
 if __name__ == "__main__":
-    preprocess_test_images(input_dir="test_mednist", output_file="preprocessed_test_images.pt")
+    preprocess_test_images(input_dir="/app/test_mednist", output_file="/app/preprocessed_test_images.pt")
