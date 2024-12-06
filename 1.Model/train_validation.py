@@ -127,4 +127,6 @@ def train_model(data_dir, output_dir, model_path):
     print("Training metrics plot saved.")
 
 if __name__ == "__main__":
-    train_model(data_dir="data/preprocessed", output_dir="results/train", model_path="models/best_metric_model.pth")
+    train_model(data_dir="/app/data/preprocessed", 
+                output_dir="/app/results/train", 
+                model_path="/app/models/best_metric_model.pth")

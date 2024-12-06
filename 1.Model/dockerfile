@@ -1,17 +1,26 @@
 # Use the official Python 3.8.6 base image
-FROM python:3.8.6-slim
+FROM python:3.8.6
+
+# Install bash for executing shell scripts
+RUN apt-get update && apt-get install -y bash && rm -rf /var/lib/apt/lists/*
 
 # Set the working directory inside the container
 WORKDIR /app
 
 # Copy the script and dependency files into the container
-COPY data_gathering.sh /app/
-COPY data_preprocessing.py /app/
-COPY train_validation.py /app/
-COPY test_results.py /app/
+COPY data_gathering.sh /app/data_gathering.sh
+COPY data_preprocessing.py /app/data_preprocessing.py
+COPY train_validation.py /app/train_validation.py
+COPY test_results.py /app/test_results.py
 
+
+# Ensure the script has execution permissions
+RUN chmod +x /app/data_gathering.sh
 
 COPY requirements.txt /app/
 
 # Install dependencies
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install -r requirements.txt
+
+# Expose the application port
+EXPOSE 5000

@@ -84,4 +84,4 @@ def preprocess_data(input_dir, output_dir):
     torch.save({"images": testX, "labels": testY}, os.path.join(output_dir, "test_split.pt"))
 
 if __name__ == "__main__":
-    preprocess_data(input_dir="data/MedNIST", output_dir="data/preprocessed")
+    preprocess_data(input_dir="/app/data/MedNIST", output_dir="/app/data/preprocessed")

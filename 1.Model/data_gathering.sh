@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Define directories
-DATA_DIR="data"
+DATA_DIR="/app/data"
 ARCHIVE_NAME="MedNIST.tar.gz"
 URL="https://www.dropbox.com/s/5wwskxctvcxiuea/MedNIST.tar.gz"
 

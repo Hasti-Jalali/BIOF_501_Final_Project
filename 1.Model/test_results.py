@@ -60,7 +60,7 @@ def test_model(data_dir, model_path, output_dir):
 
 if __name__ == "__main__":
     test_model(
-        data_dir="data/preprocessed",
-        model_path="models/best_metric_model.pth",
-        output_dir="results/test"
+        data_dir="/app/data/preprocessed",
+        model_path="/app/models/best_metric_model.pth",
+        output_dir="/app/results/test"
     )
