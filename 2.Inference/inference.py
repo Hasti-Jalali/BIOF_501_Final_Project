@@ -69,11 +69,14 @@ def run_test(preprocessed_file, model_path, temp_output_file, label_names):
     torch.save(results, temp_output_file)
     print(f"Inference results saved to temporary file '{temp_output_file}'.")
 
+    if os.path.exists(preprocessed_file):
+        os.remove(preprocessed_file)
+
 
 if __name__ == "__main__":
     # Define paths and labels
     preprocessed_file = "/app/preprocessed_test_images.pt"
-    model_path = "/app/best_metric_model.pth"
+    model_path = "/app/model/best_metric_model.pth"
     temp_output_file = "/app/results.pt"  # Temporary file
     label_names = ["AbdomenCT", "BreastMRI", "CXR", "ChestCT", "Hand", "HeadCT"]
 

@@ -5,9 +5,6 @@ nextflow.enable.dsl=2
 process preprocessing {
     container 'mednist_inference:latest'
 
-    input:
-    val inputDir
-
     output:
     val("/app/preprocessed_test_images.pt"), emit: preprocessedData
 
@@ -54,6 +51,6 @@ workflow {
     def curPath = file('.')
 
     preprocessedData = preprocessing()
-    inferenceResults = trainValidation(preprocessedData)
-    finalResultsOutput = testResults(inferenceResults)
+    inferenceResults = inference(preprocessedData)
+    finalResultsOutput = finalResult(inferenceResults)
 }
