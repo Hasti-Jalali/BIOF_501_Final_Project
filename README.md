@@ -154,7 +154,7 @@ This project implements two distinct workflows:
      - **F1-Score**: The harmonic mean of precision and recall, providing a single metric for classification performance.
      - **Support**: The number of true instances for each class.
 
-   - **Explanation of Each Step**:
+   **Explanation of Each Step**:
 
      #### Step 1: Download Data
      - **What Happens**:  
@@ -241,28 +241,25 @@ This project implements two distinct workflows:
 5. **Output of the Inference Workflow**:
 
    - The output of this workflow is a file named `test_predictions.csv`, which contains the classifications for the images in the `./test_mednist` folder.
-   - **Explanation of Each Step**:
-     Here is the updated and expanded explanation for the **Inference Workflow** steps with the details you provided:
 
----
 
- - **Explanation of Each Step**:
+   **Explanation of Each Step**:
 
-   #### Step 1: Read and Preprocess Image Data
+    #### Step 1: Read and Preprocess Image Data
      - **What Happens**:
      Images from the `./test_mednist` directory are read and preprocessed using the `preprocessing.py` script. This ensures that the test images undergo the same transformations as the training data to maintain consistency.
      - **Details**:
      - Images are loaded and normalized to standardize pixel intensity values.
      - Transforms such as `ToTensor` convert the image data into PyTorch-compatible formats.
 
-   #### Step 2: Classify Images
+    #### Step 2: Classify Images
      - **What Happens**:
      A pretrained DenseNet121 model is used to predict the classes of the preprocessed images. This model can either be obtained from the training workflow or provided as a standalone file.
      - **Details**:
      - The model assigns probabilities to each class for every image.
      - The class with the highest probability is selected as the predicted label.
 
-   #### Step 3: Generate CSV Output
+    #### Step 3: Generate CSV Output
      - **What Happens**:
      A CSV file named `test_predictions.csv` is created to store the results of the inference process.
      - **Details**:
